@@ -1,15 +1,14 @@
 function simpleCalendar() {
     $(document).ready(function () {
-        let currentDay = moment().format('dddd, MMMM Do, YYYY h:mm a');
+        let currentDate = moment().format('dddd, MMMM Do, YYYY');
         let currentHour = ["9 a.m.", "10 a.m.", "11 a.m.", "12 p.m.", "1 p.m.", "2 p.m.", "3 p.m.", "4 p.m.",
             "5 p.m."]
 
-        //function currentDay() {
-           // let currentDay = $("#currentDay").text(currentDay);
-            //return currentDay;
-        //}
+        function currentDay() {
+            $("#currentDay").text(currentDate);
+        }
 
-        //currentDay();
+        currentDay();
 
         for (i = 0; i < currentHour.length; i++) {
             let row = $("<div>").addClass("row");
@@ -57,7 +56,7 @@ function simpleCalendar() {
         let doList7 = $("#input-field-7");
         let doList8 = $("#input-field-8");
         let doList9 = $("#input-field-9");
-        
+
         $(saveBtnId1).on("click", function (event) {
             event.preventDefault();
             let doList1 = $("#input-field-1").val().trim();
